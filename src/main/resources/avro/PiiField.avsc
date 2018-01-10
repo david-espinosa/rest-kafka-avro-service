@@ -1,0 +1,11 @@
+{"namespace": "org.espixxl.kafka.avro",
+ "type": "record",
+ "name": "PiiField",
+         "fields": [
+ {"name": "encrypted", "type": "boolean", "doc": "Encrypted flag."},
+ {"name": "encryptedValue", "type": "string", "doc": "Encrypted value."},
+ {"name": "type", "type": ["string", "null"], "doc": "Basic type of the field."},
+ {"name": "identity_id", "type": "int", "doc": "Owner of data."},
+ {"name": "key_management_url", "type": "string", "doc": "Url on Key Management Service used to fetch the user key."}
+ ]
+}

@@ -1,0 +1,20 @@
+{"namespace": "org.espixxl.kafka.avro",
+  "type": "record",
+  "name": "Contribution",
+  "fields": [
+    {"name": "contributor_id", "type": "int", "doc": "Id of the contributor."},
+    {"name": "contributor_email", "type": "org.espixxl.kafka.avro.PiiField", "doc": "Email of the contributor."},
+    {"name": "contributor_name", "type": ["null","org.espixxl.kafka.avro.PiiField"], "doc": "Name of the contributor."},
+    {"name": "comment", "type": ["string", "null"], "doc": "Comment done in the contribution."},
+    {
+      "name": "comment_type",
+      "type": {
+                   "type": "enum",
+                   "name": "comment_type_values",
+                   "symbols": ["SIMPLE", "LINKED"],
+                   "doc": "* `SIMPLE`: The user has provided a complete comment\n* `LINKED`: Comment belongs to a linked comment\n*"
+                   },
+      "doc": "Type of comment."
+    }
+  ]
+}
